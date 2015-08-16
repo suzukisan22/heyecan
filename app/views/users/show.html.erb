@@ -1,4 +1,22 @@
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
+<p id="edit" class="btn btn-sm btn-success w100"><%= link_to "edit" , edit_user_path(@user) %></p>
+
+<h4>
+                <table class="table table-striped">
+                    <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td><%= @user.name %></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td><%= @user.address %></td>
+                    </tr>
+                    <tr>
+                        <td>E-mail</td>
+                        <td><%= @user.email %></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+            </h4>

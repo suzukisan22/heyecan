@@ -17,6 +17,21 @@
 </style>
 
 
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+
+
+
 <div class="row"><h1>あなたの感動をシェアしましょう。</h1></div>
 
 
@@ -57,3 +72,5 @@
     <div class="center row">
         <span class="btn btn-lg btn-primary"><%= link_to "Sign up now!", "#" , id: "signup" %></span>
   </div>
+  
+  <% end %>

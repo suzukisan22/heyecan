@@ -24,8 +24,19 @@
 
 
             </h4>
+            <h3>
+            <div class="row">
+                <div class="col-xs-6">
+                    <p><%= @user.following_users.count %><br><%= link_to "followings" , followings_path(@user) %></p>
+                </div>
+                <div class="col-xs-6">
+                    <p><%= @user.follower_users.count %><br><%= link_to "followers" , followers_path(@user) %></p>
+                </div>
+            </div>
+        </h3>
             
             </section>
+            
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>

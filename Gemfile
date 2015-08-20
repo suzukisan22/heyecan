@@ -47,5 +47,7 @@ group :development, :test do
   gem 'spring'
   
   gem 'kaminari'
+  
+  gem 'amazon-ecs'
 end
 

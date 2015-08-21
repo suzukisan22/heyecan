@@ -9,6 +9,14 @@ class MicropostsController < ApplicationController
     else
       render 'static_pages/home'
     end
+    if params[:title]
+      response = Amazon::Ecs.item_search(params[:title] , 
+                                  :search_index => 'All' , 
+                                  :response_group => 'Medium' , 
+                                  :country => 'jp')
+      @amazon_items = response.items
+    
+    
   end
   
   def destroy

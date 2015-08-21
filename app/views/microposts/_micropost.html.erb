@@ -1,7 +1,26 @@
 <li id="micropost-<%= micropost.id %>">
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
-  <span class="title">『<%= micropost.title %>』</span>
+  <span class="title">『<%= micropost.title%>』</span>
+ 
+            
+            <% if @books.present? %>
+    <ul style="list-style: none;">
+      <% @books.items.each do |i| %>
+        <li style="clear: both;">
+          <div style="width: 150px;float: left;text-align:center;">
+            <%= link_to i.get('DetailPageURL') do %>
+              <%= image_tag i.get('SmallImage/URL'), {:style => 'border: none;'} %>
+            <% end %>
+          </div>
+          <div style="width: 150px; float: left;"><%= i.get('ASIN') %></div>
+          <div style="width: 150px; float: left;"><%= i.get('ItemAttributes/Title') %></div>
+        </li>
+      <% end %> 
+    </ul>
+  <% end %>
+            
+            
   <span class="content"><%= micropost.content %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(micropost.created_at) %> ago.

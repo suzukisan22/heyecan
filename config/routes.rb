@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
  root to: 'static_pages#home'
+ 
+ 
   get 'signup',  to: 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
@@ -12,8 +14,7 @@ Rails.application.routes.draw do
   resources :microposts
   resources :relationships, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :ownerships, only: [:create, :destroy]
-  resources :items , only: [:new , :show]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
